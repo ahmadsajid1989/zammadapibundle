@@ -1,0 +1,40 @@
+{
+  "name": "ahmadsajid1989/ZammadApiBundle",
+  "type": "symfony-bundle",
+  "description": "Zammad API Client for Symfony2",
+  "keywords": ["zammad", "zammad api client symfony","zammad api symfony2",  "symfony"],
+  "homepage": "https://github.com/ahmadsajid1989/zammadapibundle",
+  "license": "MIT",
+  "authors": [{
+    "name": "Ahmad Sajid",
+    "email": "ahmadsajid1989@gmail.com"
+  },{
+    "name": "Main PHP Library Contributor",
+    "homepage": "https://github.com/zammad/zammad-api-client-php"
+  }],
+  "require": {
+    "php": ">=5.3.3",
+    "symfony/framework-bundle": "^2.1",
+    "symfony/yaml": "^2.1",
+    "zammad/zammad-api-client-php": "1.0.*"
+  },
+  "require-dev": {
+    "symfony/console": "^2.1",
+    "phpunit/phpunit": "^4.0"
+  },
+  "suggest": {
+    "symfony/console": "If you want to use commands to interact with the client"
+  },
+  "autoload": {
+    "psr-0": { "ahmadsajid1989\\ZammadApiBundle": "" }
+  },
+  "target-dir": "ahmadsajid1989/ZammadApiBundle",
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "extra" : {
+    "branch-alias" : {
+      "dev-master" : "dev-master"
+    }
+  }
+}
