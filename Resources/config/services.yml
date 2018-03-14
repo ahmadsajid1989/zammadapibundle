@@ -1,0 +1,4 @@
+services:
+#    zammad_api.example:
+#        class: ahmadsajid1989\ZammadApiBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
