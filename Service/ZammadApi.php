@@ -82,7 +82,7 @@ class ZammadApi
                 'url'      => $this->url,
                 'username' => $this->username,
                 'password' => $this->password,
-                'debug'    => $this->debug
+                'debug'    => false
             ]);
 
 
