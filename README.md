@@ -59,4 +59,16 @@ class AppKernel extends Kernel
 }
 ```
 
+Update your config file with the following settings:
+
+### app/config/config.php
+
+```
+zammad_api:
+    url: 'https://localhost/zammad
+    username: 'username'
+    password: 'password'
+    debug: 'false'
+```
+
 
