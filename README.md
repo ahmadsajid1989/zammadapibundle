@@ -4,22 +4,59 @@ This client can be used to access the API of the open source helpdesk [Zammad](h
 [Zammad API Client](https://github.com/zammad/zammad-api-client-php/blob/master/README.md)
 
 
-## Installation
+Installation
+============
+
+Step 1: Download the Bundle
+---------------------------
+
+Open a command console, enter your project directory and execute the
+following command to download the latest stable version of this bundle:
+
+```console
+$ composer require ahmadsajid1989/zammadApiBundle
+```
+
+This command requires you to have Composer installed globally, as explained
+in the [installation chapter](https://getcomposer.org/doc/00-intro.md)
+of the Composer documentation.
+
 
 ### Requirements
-The API client needs [composer](https://getcomposer.org/). For installation have a look at its [documentation](https://getcomposer.org/download/).
-Additionally, the API client needs PHP 5.6 or newer.
+
+the API client needs PHP 5.6 or newer.
 
 ### Integration into your project
 Add the following to the "require" section of your project's composer.json file:
 ```json
-"ahmadsajid1989/ZammadApiBundle": "dev-master"
+"ahmadsajid1989/zammadApiBundle": "dev-master"
 ```
 
-### Installing the API client's dependencies
-Fetch the API client's code and its dependencies by updating your project's dependencies with composer:
-```
-$ composer update
+Step 2: Enable the Bundle
+-------------------------
+
+Then, enable the bundle by adding it to the list of registered bundles
+in the `app/AppKernel.php` file of your project:
+
+```php
+<?php
+// app/AppKernel.php
+
+// ...
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+            new ahmadsajid1989\ZammadApiBundle\ZammadApiBundle(),
+        );
+
+        // ...
+    }
+
+    // ...
+}
 ```
 
 

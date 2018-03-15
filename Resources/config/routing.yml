@@ -1,3 +1,0 @@
-zammad_api_homepage:
-    path:     /
-    defaults: { _controller: ZammadApiBundle:Default:index }

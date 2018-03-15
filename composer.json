@@ -1,5 +1,5 @@
 {
-  "name": "ahmadsajid1989/ZammadApiBundle",
+  "name": "ahmadsajid1989/zammadapibundle",
   "type": "symfony-bundle",
   "description": "Zammad API Client for Symfony2",
   "keywords": ["zammad", "zammad api client symfony","zammad api symfony2",  "symfony"],
@@ -14,9 +14,9 @@
   }],
   "require": {
     "php": ">=5.3.3",
-    "zammad/zammad-api-client-php": "1.0.*"
+    "zammad/zammad-api-client-php": "1.2.*"
   },
-  
+
   "suggest": {
     "symfony/console": "If you want to use commands to interact with the client"
   },
