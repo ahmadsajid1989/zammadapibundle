@@ -21,6 +21,7 @@ class ZammadApiExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+
         $container->setParameter("zammad_api.url", $config["url"]);
         $container->setParameter("zammad_api.username", $config["username"]);
         $container->setParameter("zammad_api.password", $config["password"]);
