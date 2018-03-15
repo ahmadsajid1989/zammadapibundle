@@ -78,15 +78,17 @@ class ZammadApi
      */
     protected function client(){
 
-        if (!$this->client() instanceof Client)
-            $this->client = new Client([
+           $this->client = new Client([
                 'url'      => $this->url,
                 'username' => $this->username,
                 'password' => $this->password,
-                'debug'    => $this->debug
+                'debug'    => $this
             ]);
 
+
         return $this->client;
+
+
     }
 
     /**
@@ -94,6 +96,8 @@ class ZammadApi
      * @return $this|bool
      */
     public function getTicket($id){
+
+
 
         $ticket = $this->ticket = $this->client()->resource(ResourceType::TICKET)->get($id);
 

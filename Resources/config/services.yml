@@ -2,3 +2,4 @@ services:
     zammad_api:
       class: ahmadsajid1989\ZammadApiBundle\Service\ZammadApi
       arguments: ["%zammad_api.url%","%zammad_api.username%","%zammad_api.password%","%zammad_api.debug%"]
+      public: true
