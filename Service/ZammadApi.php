@@ -113,6 +113,22 @@ class ZammadApi
         return false;
     }
 
+    public function getTicketByZammadId($id){
+
+        $ticket = $this->ticket = $this->client()->resource(ResourceType::TICKET)->get($id);
+        $response = array();
+        $response ['ticket'] = $ticket;
+        $response ['article_details'] = $ticket->getTicketArticles();
+        if($this->ticket)
+            return $response;
+
+        if ($ticket->hasError() ) {
+            return $ticket->getError();
+        }
+
+        return false;
+    }
+
     public function searchTicketByTitle($search){
 
         $this->ticket = $this->client()->resource(ResourceType::TICKET)->search("title:".$search);
@@ -157,6 +173,8 @@ class ZammadApi
         $user->setValue('phone',$user_info['phone']);
         $user->setValue('active',$user_info['active']);
         $user->setValue('password',$user_info['password']);
+        $user->setValue('firstname',$user_info['firstname']);
+        $user->setValue('lastname',$user_info['lastname']);
         $response = $user->save();
         if ($response->getError()==null){
             return $response;
