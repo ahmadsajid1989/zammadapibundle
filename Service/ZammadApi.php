@@ -151,7 +151,7 @@ class ZammadApi
 
     public function createUser($user_info=array()){
 
-        $user = $this->client->resource( ResourceType::USER );
+        $user = $this->client()->resource( ResourceType::USER );
         $user->setValue('login',$user_info['login']);
         $user->setValue('email',$user_info['email']);
         $user->setValue('phone',$user_info['phone']);
@@ -167,7 +167,7 @@ class ZammadApi
 
     public function createTicket($ticket_info=array()){
 
-        $ticket = $this->client->resource( ResourceType::TICKET );
+        $ticket = $this->client()->resource( ResourceType::TICKET );
         $ticket->setValue( 'title', $ticket_info['title'] );
         $ticket->setValue( 'customer_id',$ticket_info['customer_id']);
         $ticket->setValue( 'article',$ticket_info['article']);
