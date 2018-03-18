@@ -113,6 +113,73 @@ class ZammadApi
         return false;
     }
 
+    public function searchTicketByTitle($search){
+
+        $this->ticket = $this->client()->resource(ResourceType::TICKET)->search("title:".$search);
+
+        if(is_array($this->ticket))
+
+            return $this;
+
+        else
+            return false;
+
+    }
+
+    public function searchTicketByCustomerId($search){
+
+        $this->ticket = $this->client()->resource(ResourceType::TICKET)->search("customer_id:".$search);
+
+        if(is_array($this->ticket))
+
+            return $this;
+
+        else
+            return false;
+    }
+
+    public function searchUserByBongoId($search){
+
+        $user = $this->client()->resource(ResourceType::USER)->search("bongoid:".$search);
+        if(is_array($user))
+
+            return $user;
+
+        else
+            return false;
+    }
+
+    public function createUser($user_info=array()){
+
+        $user = $this->client->resource( ResourceType::USER );
+        $user->setValue('login',$user_info['login']);
+        $user->setValue('email',$user_info['email']);
+        $user->setValue('phone',$user_info['phone']);
+        $user->setValue('active',$user_info['active']);
+        $user->setValue('password',$user_info['password']);
+        $response = $user->save();
+        if ($response->getError()==null){
+            return $response;
+        }else{
+            return $response->getError();
+        }
+    }
+
+    public function createTicket($ticket_info=array()){
+
+        $ticket = $this->client->resource( ResourceType::TICKET );
+        $ticket->setValue( 'title', $ticket_info['title'] );
+        $ticket->setValue( 'customer_id',$ticket_info['customer_id']);
+        $ticket->setValue( 'article',$ticket_info['article']);
+        $ticket->setValue( 'group_id',$ticket_info['group_id']);
+        $response = $ticket->save();
+        if ($response->getError()==null){
+            return $response;
+        }else{
+            return $response->getError();
+        }
+
+    }
 
 
 }
